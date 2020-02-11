@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_my_meeting/views/home.dart';
 
 void main() => runApp(MyApp());
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Cairo',
       ),
       routes: <String, WidgetBuilder>{
-        '/': (BuildContext context) => Home(),        
+        '/': (BuildContext context) => Home(),
       },
     );
   }
