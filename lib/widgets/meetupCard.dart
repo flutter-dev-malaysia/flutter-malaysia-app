@@ -42,8 +42,11 @@ class MeetupCard extends StatelessWidget {
             children: <Widget>[
               Container(
                 padding: const EdgeInsets.only(left: 10, right: 8, bottom: 7),
-                child: Icon(FontAwesomeIcons.calendarAlt,
-                    color: Colors.white, size: 20),
+                child: Icon(
+                  FontAwesomeIcons.calendarAlt,
+                  color: Colors.white,
+                  size: 20,
+                ),
               ),
               Text(
                 date,

@@ -116,7 +116,6 @@ Future<void> _launchURL(String url) async {
 
 Widget _socialLink(IconData icon, Color iconColor, String link, String text) {
   return Container(
-    margin: const EdgeInsets.all(5),
     child: FlatButton(
       onPressed: () {
         _launchURL(link);
@@ -125,18 +124,8 @@ Widget _socialLink(IconData icon, Color iconColor, String link, String text) {
         padding: const EdgeInsetsDirectional.only(top: 5),
         child: Column(
           children: <Widget>[
-            Icon(
-              icon,
-              color: iconColor,
-              size: 30,
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            Text(
-              text,
-              style: TextStyle(fontSize: 12),
-            ),
+            Icon(icon, color: iconColor, size: 30),
+            Text(text, style: const TextStyle(fontSize: 12)),
           ],
         ),
       ),
