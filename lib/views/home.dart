@@ -170,7 +170,7 @@ Widget _socialLink(IconData icon, Color iconColor, String link, String text) {
     child: ListTile(
       contentPadding: const EdgeInsets.all(0),
       leading: Icon(icon, color: iconColor, size: 28),
-      title: Text(text, style: const TextStyle(fontSize: 20)),
+      title: Text(text, style: const TextStyle(fontSize: 18)),
     ),
   );
 }
