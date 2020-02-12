@@ -1,5 +1,5 @@
 name: flutter_my_meeting
-description: A new Flutter project.
+description: flutter malaysia meeting app
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,10 +19,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  flutter_advanced_networkimage: ^0.6.4
+  font_awesome_flutter: ^8.5.0
+  url_launcher: ^5.4.1
 
 dev_dependencies:
   flutter_test:
