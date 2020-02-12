@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:flutter_my_meeting/widgets/meetupCard.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -23,6 +24,29 @@ class _HomeState extends State<Home> {
               child: const Image(
                 image: AssetImage('lib/assets/images/logo.png'),
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                _socialLink(
+                  FontAwesomeIcons.github,
+                  const Color(0xff000000),
+                  'https://github.com/FlutterMY/meetup',
+                  "Meetup's Content",
+                ),
+                _socialLink(
+                  FontAwesomeIcons.telegram,
+                  const Color(0xff0088cc),
+                  'https://t.me/flutterdevmalaysia',
+                  'Telegram Group',
+                ),
+                _socialLink(
+                  FontAwesomeIcons.github,
+                  const Color(0xff000000),
+                  'https://github.com/flutter-dev-malaysia/flutter-malaysia-app',
+                  'This App',
+                ),
+              ],
             ),
             Container(
               child: Text(
@@ -80,4 +104,42 @@ class _HomeState extends State<Home> {
       ),
     ));
   }
+}
+
+Future<void> _launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+Widget _socialLink(IconData icon, Color iconColor, String link, String text) {
+  return Container(
+    margin: const EdgeInsets.all(5),
+    child: FlatButton(
+      onPressed: () {
+        _launchURL(link);
+      },
+      child: Container(
+        padding: const EdgeInsetsDirectional.only(top: 5),
+        child: Column(
+          children: <Widget>[
+            Icon(
+              icon,
+              color: iconColor,
+              size: 30,
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+            ),
+            Text(
+              text,
+              style: TextStyle(fontSize: 12),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }
